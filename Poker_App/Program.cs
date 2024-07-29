@@ -82,8 +82,13 @@
 
         static void DealInitialCards(List<string> deck, string[] playerHand, string[] computerHand)
         {
-            // Placeholder: Deal initial cards to player and computer
+            playerHand[0] = deck[0];
+            playerHand[1] = deck[1];
+            computerHand[0] = deck[2];
+            computerHand[1] = deck[3];
+            deck.RemoveRange(0, 4); // Remove dealt cards from the deck
         }
+
 
         static void HandleBlinds(ref int playerStack, ref int computerStack, ref int pot, bool isPlayerSmallBlind)
         {
