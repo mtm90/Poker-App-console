@@ -69,8 +69,16 @@
 
         static void ShuffleDeck(List<string> deck)
         {
-            // Placeholder: Shuffle the deck
+            var rand = new Random();
+            for (int i = deck.Count - 1; i > 0; i--)
+            {
+                int j = rand.Next(i + 1);
+                var temp = deck[i];
+                deck[i] = deck[j];
+                deck[j] = temp;
+            }
         }
+
 
         static void DealInitialCards(List<string> deck, string[] playerHand, string[] computerHand)
         {
