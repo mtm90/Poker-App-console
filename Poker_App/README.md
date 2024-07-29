@@ -6,7 +6,7 @@ After creating the the folder directory, here are the basic steps to create a po
 
 ### Key components
 
- - [ ] Deck Initialization: Function to initialize and shuffle the deck.
+ - [x] Deck Initialization: Function to initialize and shuffle the deck.
  - [ ] Hand Dealing: Function to deal hands to the player and the computer.
  - [ ] Community Cards: Functions to deal the flop, turn, and river.
  - [ ] Blinds Handling: Function to handle the small and big blinds.

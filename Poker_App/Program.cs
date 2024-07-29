@@ -52,8 +52,19 @@
 
         static List<string> InitializeDeck()
         {
-            // Placeholder: Return a new initialized deck
-            return new List<string>();
+            string[] suits = { "♠", "♥", "♦", "♣" };
+            string[] values = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+            var deck = new List<string>();
+
+            foreach (var suit in suits)
+            {
+                foreach (var value in values)
+                {
+                    deck.Add($"{value}{suit}");
+                }
+            }
+
+            return deck;
         }
 
         static void ShuffleDeck(List<string> deck)
