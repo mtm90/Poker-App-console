@@ -92,8 +92,23 @@
 
         static void HandleBlinds(ref int playerStack, ref int computerStack, ref int pot, bool isPlayerSmallBlind)
         {
-            // Placeholder: Handle blinds
+            int smallBlind = 1;
+            int bigBlind = 2;
+
+            if (isPlayerSmallBlind)
+            {
+                playerStack -= smallBlind;
+                computerStack -= bigBlind;
+                pot += smallBlind + bigBlind;
+            }
+            else
+            {
+                playerStack -= bigBlind;
+                computerStack -= smallBlind;
+                pot += smallBlind + bigBlind;
+            }
         }
+
 
         static void DealCommunityCards(List<string> deck, string[] communityCards, int stage)
         {
