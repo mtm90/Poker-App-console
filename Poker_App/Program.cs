@@ -112,8 +112,21 @@
 
         static void DealCommunityCards(List<string> deck, string[] communityCards, int stage)
         {
-            // Placeholder: Deal community cards based on the stage
+            switch (stage)
+            {
+                case 3: // Flop
+                    communityCards[0] = deck[0];
+                    communityCards[1] = deck[1];
+                    communityCards[2] = deck[2];
+                    deck.RemoveRange(0, 3);
+                    break;
+                case 1: // Turn or River
+                    communityCards[3 + stage - 1] = deck[0];
+                    deck.RemoveAt(0);
+                    break;
+            }
         }
+
 
         static bool BettingRound(string[] playerHand, string[] computerHand, string[] communityCards, ref int playerStack, ref int computerStack, ref int pot, bool isPlayerSmallBlind)
         {
